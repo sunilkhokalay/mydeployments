@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: notes-service
+spec:
+  type: NodePort
+  selector:
+    app: notes-app
+  ports:
+  - protocol: TCP
+    port: 9010
+    targetPort: 5050
+    nodePort: 30001

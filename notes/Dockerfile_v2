@@ -1,0 +1,8 @@
+FROM sunilkhokalay/alpine-python-flask
+COPY app_v2.py .
+RUN mkdir templates
+COPY templates/* templates 
+RUN pip install redis
+WORKDIR .
+EXPOSE 5050
+ENTRYPOINT python app_v2.py
